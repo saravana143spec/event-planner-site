@@ -1,152 +1,187 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Services</title>
+  <title>SSM Events | Full Event Management & Celebrations</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: #0f1117;
-      color: #f1f1f1;
-    }
-
-    /* Hero Section with Image Background */
     .hero-section {
-      position: relative;
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      /* Replace 'event-bg.jpg' with your saved image file path */
-      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(15, 17, 23, 0.95)), 
-                  url('event-bg.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('event-bg.jpg') center/cover no-repeat;
+      color: white;
+      padding: 110px 0;
     }
-
-    .hero-title {
-      font-size: 2.8rem;
-      font-weight: 700;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-      color: #ffffff;
-      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-      max-width: 800px;
-      margin-bottom: 25px;
-    }
-
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #e65c00, #f9d423);
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: 600;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(230, 92, 0, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(230, 92, 0, 0.6);
-    }
-
-    /* Services Section */
-    .services-container {
-      max-width: 1100px;
-      margin: -40px auto 60px;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-heading {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 35px;
-      color: #ffd166;
-      letter-spacing: 1px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
     .service-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 12px;
     }
-
     .service-card:hover {
-      border-color: #ffd166;
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     }
-
-    .service-card h3 {
-      font-size: 1.4rem;
-      color: #ffd166;
+    .icon-box {
+      font-size: 2.2rem;
+      color: #ff4757;
       margin-bottom: 12px;
-      border-bottom: 2px solid rgba(255, 209, 102, 0.3);
-      padding-bottom: 8px;
     }
-
-    .service-card p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #d1d5db;
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebc59;
+      color: white;
     }
   </style>
 </head>
-<body>
+<body class="bg-light">
 
-  <!-- Hero Banner with Background Image -->
-  <section class="hero-section">
-    <h1 class="hero-title">Making Your Special Days Unforgettable</h1>
-    <a href="tel:9566047449" class="contact-btn">
-      📞 Call: 9566047449
-    </a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-warning" href="#"><i class="fa-solid fa-wand-magic-sparkles me-2"></i>SSM Events</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link text-white" href="#services">Our Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#funstalls">Fun Food Stalls</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="btn btn-warning btn-sm px-3 fw-bold" href="tel:+919566047449"><i class="fa-solid fa-phone me-1"></i> Call Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold text-shadow">Making Your Special Days Unforgettable!</h1>
+      <p class="lead mb-4">Complete Event Management, Stage Decors, Entertainment & Fun Food Stalls for Birthdays, Marriages & Parties.</p>
+      <a href="#services" class="btn btn-warning btn-lg fw-bold px-4 me-2 shadow">Explore Services</a>
+      <!-- WhatsApp Link -->
+      <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20inquire%20about%20event%20booking" class="btn btn-outline-light btn-lg px-4 shadow"><i class="fa-brands fa-whatsapp me-1"></i> WhatsApp Us</a>
+    </div>
+  </header>
+
+  <!-- Main Services Section -->
+  <section id="services" class="container py-5">
+    <div class="text-center mb-5">
+      <h6 class="text-danger fw-bold text-uppercase">What We Do</h6>
+      <h2 class="fw-bold">Complete Event Solutions</h2>
+      <p class="text-muted">A to Z planning and execution for stress-free celebrations</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4 text-center service-card shadow-sm">
+          <div class="icon-box"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <h5 class="fw-bold">Stage & Balloon Decors</h5>
+          <p class="text-muted small">Theme balloon arches, fresh flower stage backdrops, entrance arches, LED lighting setups for birthdays and weddings.</p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4 text-center service-card shadow-sm">
+          <div class="icon-box"><i class="fa-solid fa-camera-retro"></i></div>
+          <h5 class="fw-bold">Photo & Videography</h5>
+          <p class="text-muted small">Candid photography, cinematic video teaser, drone shoot, instant photo booth, and album designs.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 p-4 text-center service-card shadow-sm">
+          <div class="icon-box"><i class="fa-solid fa-music"></i></div>
+          <h5 class="fw-bold">DJ Mix & Sound Setup</h5>
+          <p class="text-muted small">Professional DJ artists, JBL line-array sound systems, laser party lights, and smoke machines.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Services Offered -->
-  <div class="services-container">
-    <h2 class="section-heading">Services Offered</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <h3>Decoration</h3>
-        <p>Thematic backdrops, fresh floral styling, balloon arrangements, entrance arches, and ambient lighting.</p>
+  <!-- Fun Stalls & Food Section -->
+  <section id="funstalls" class="bg-white py-5 border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h6 class="text-warning fw-bold text-uppercase">Kids & Guest Favorites</h6>
+        <h2 class="fw-bold">Live Party Stalls & Treats</h2>
+        <p class="text-muted">Live counters that make birthdays and family events extra special</p>
       </div>
 
-      <div class="service-card">
-        <h3>Planning & Coordination</h3>
-        <p>Vendor management, stage design, sound and DJ setups, photography, and traditional or modern ritual coordination (Hindu, Christian, Muslim, and fusion ceremonies).</p>
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded service-card bg-light">
+            <i class="fa-solid fa-seedling text-warning fs-1 mb-2"></i>
+            <h6 class="fw-bold mb-0">Live Popcorn Counter</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded service-card bg-light">
+            <i class="fa-solid fa-cloud text-info fs-1 mb-2"></i>
+            <h6 class="fw-bold mb-0">Cotton Candy Machine</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded service-card bg-light">
+            <i class="fa-solid fa-cake-candles text-danger fs-1 mb-2"></i>
+            <h6 class="fw-bold mb-0">Chocolate Fountain</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 border rounded service-card bg-light">
+            <i class="fa-solid fa-wine-glass text-success fs-1 mb-2"></i>
+            <h6 class="fw-bold mb-0">Fresh Juice & Mocktails</h6>
+          </div>
+        </div>
       </div>
-
-      <div class="service-card">
-        <h3>Rentals</h3>
-        <p>Shamianas, specialized seating, tables, and cooling equipment.</p>
-      </div>
-
     </div>
-  </div>
+  </section>
 
+  <!-- Contact & Enquiry Section -->
+  <section id="contact" class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2 class="fw-bold mb-3">Book Your Event Date Today!</h2>
+        <p class="text-muted mb-4">Contact us directly on WhatsApp or Call for customized packages and budget quotes.</p>
+        
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="tel:+919566047449" class="btn btn-dark btn-lg px-4"><i class="fa-solid fa-phone me-2"></i> Call: +91 95660 47449</a>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20know%20package%20prices%20for%20an%20event" class="btn btn-success btn-lg px-4"><i class="fa-brands fa-whatsapp me-2"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <small>© 2026 SSM Events & Decors. All rights reserved.</small>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919566047449?text=Hello,%20I%20have%20an%20event%20booking%20enquiry!" class="whatsapp-float">
+    <i class="fa-brands fa-whatsapp me-1"></i> Quick Enquiry
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
