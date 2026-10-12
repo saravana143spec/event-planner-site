@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
+  <!-- SEO Meta Tags -->
   <title>SSM Eventz | Luxury Event Management & Birthday Decors</title>
-  <meta name="description" content="SSM Eventz - Complete event management, stage decors, popcorn counter, cotton candy machine, chocolate fountain and luxury celebrations.">
-  <meta name="keywords" content="SSM Eventz, event management, birthday decoration, party stalls, popcorn machine, chocolate fountain, wedding decors">
+  <meta name="description" content="SSM Eventz - Complete event management, stage decors, DJ sound, popcorn counter, cotton candy machine, chocolate fountain and luxury celebrations.">
+  <meta name="keywords" content="SSM Eventz, event management, birthday decoration, party stalls, popcorn machine, chocolate fountain, wedding decors, dj sound setup">
   <meta name="author" content="SSM Eventz">
 
+  <!-- Google Search Console Verification Tag -->
   <meta name="google-site-verification" content="KAVjCvcgnDn4-lkz8KiUI5-kem5N7AAFua4ooHKNGIQ" />
 
   <!-- Bootstrap 5 CSS -->
@@ -42,15 +43,40 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: none;
       border-radius: 12px;
+      cursor: pointer;
     }
     .service-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     }
+    .pricing-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid transparent;
+      border-radius: 16px;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .pricing-featured {
+      border: 2px solid #ffc107;
+      position: relative;
+    }
     .icon-box {
       font-size: 2.2rem;
       color: #ff4757;
       margin-bottom: 12px;
+    }
+    .gallery-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .review-card {
+      border-radius: 14px;
+      border: none;
+      background: white;
     }
     .whatsapp-float {
       position: fixed;
@@ -77,7 +103,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-2">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-warning" href="#">
-        <img src="logo.png" alt="SSM Eventz Logo" class="brand-logo">
+        <img src="logo.png" alt="SSM Eventz Logo" class="brand-logo" onerror="this.style.display='none'">
         <span>SSM EVENTZ</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -85,9 +111,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto gap-2 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link text-white" href="#services">Our Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#funstalls">Fun Food Stalls</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#funstalls">Fun Stalls</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#booking">Book Now</a></li>
           <li class="nav-item">
             <a class="btn btn-warning btn-sm px-3 fw-bold" href="tel:+919566047449"><i class="fa-solid fa-phone me-1"></i> Call Now</a>
           </li>
@@ -99,10 +127,10 @@
   <!-- Hero Banner -->
   <header class="hero-section text-center">
     <div class="container">
-      <img src="logo.png" alt="SSM Eventz" class="hero-logo mb-3">
+      <img src="logo.png" alt="SSM Eventz" class="hero-logo mb-3" onerror="this.style.display='none'">
       <h1 class="display-4 fw-bold">Making Your Special Days Unforgettable!</h1>
       <p class="lead mb-4">Complete Event Management, Stage Decors, Entertainment & Fun Food Stalls for Birthdays, Marriages & Parties.</p>
-      <a href="#services" class="btn btn-warning btn-lg fw-bold px-4 me-2 shadow">Explore Services</a>
+      <a href="#packages" class="btn btn-warning btn-lg fw-bold px-4 me-2 shadow">View Packages</a>
       <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20inquire%20about%20event%20booking" class="btn btn-outline-light btn-lg px-4 shadow"><i class="fa-brands fa-whatsapp me-1"></i> WhatsApp Us</a>
     </div>
   </header>
@@ -112,38 +140,105 @@
     <div class="text-center mb-5">
       <h6 class="text-danger fw-bold text-uppercase">What We Do</h6>
       <h2 class="fw-bold">Complete Event Solutions</h2>
-      <p class="text-muted">A to Z planning and execution for stress-free celebrations</p>
+      <p class="text-muted">A to Z planning and execution (Click cards to view sample photos)</p>
     </div>
 
     <div class="row g-4">
-      <!-- Service 1 -->
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center service-card shadow-sm">
+        <div class="card h-100 p-4 text-center service-card shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#stageModal">
           <div class="icon-box"><i class="fa-solid fa-champagne-glasses"></i></div>
           <h5 class="fw-bold">Stage & Balloon Decors</h5>
           <p class="text-muted small">Theme balloon arches, fresh flower stage backdrops, entrance arches, LED lighting setups for birthdays and weddings.</p>
+          <span class="badge bg-warning text-dark mt-auto align-self-center px-3 py-2">Click to view photos</span>
         </div>
       </div>
 
-      <!-- Service 2 -->
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center service-card shadow-sm">
+        <div class="card h-100 p-4 text-center service-card shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#photoModal">
           <div class="icon-box"><i class="fa-solid fa-camera-retro"></i></div>
           <h5 class="fw-bold">Photo & Videography</h5>
           <p class="text-muted small">Candid photography, cinematic video teaser, drone shoot, instant photo booth, and album designs.</p>
+          <span class="badge bg-warning text-dark mt-auto align-self-center px-3 py-2">Click to view photos</span>
         </div>
       </div>
 
-      <!-- Service 3 -->
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center service-card shadow-sm">
+        <div class="card h-100 p-4 text-center service-card shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#djModal">
           <div class="icon-box"><i class="fa-solid fa-music"></i></div>
           <h5 class="fw-bold">DJ Mix & Sound Setup</h5>
           <p class="text-muted small">Professional DJ artists, JBL line-array sound systems, laser party lights, and smoke machines.</p>
+          <span class="badge bg-warning text-dark mt-auto align-self-center px-3 py-2">Click to view photos</span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Modals for Main Services -->
+  <div class="modal fade" id="stageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-champagne-glasses me-2"></i>Stage & Balloon Decors (Samples)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="row g-3">
+            <div class="col-md-4 col-12"><img src="decor1.jpg" onerror="this.src='event-bg.jpg'" class="gallery-img shadow-sm" alt="Stage 1"></div>
+            <div class="col-md-4 col-12"><img src="decor2.jpg" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Stage 2"></div>
+            <div class="col-md-4 col-12"><img src="decor3.jpg" onerror="this.src='https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Stage 3"></div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">Theme birthdays & wedding setups</small>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20book%20Stage%20Decoration" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp me-1"></i> Book Decor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-camera-retro me-2"></i>Photo & Videography (Samples)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="row g-3">
+            <div class="col-md-4 col-12"><img src="photo1.jpg" onerror="this.src='https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Photo 1"></div>
+            <div class="col-md-4 col-12"><img src="photo2.jpg" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Photo 2"></div>
+            <div class="col-md-4 col-12"><img src="photo3.jpg" onerror="this.src='https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Photo 3"></div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">Candid, Drone & Teaser shoots</small>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20book%20Photography" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp me-1"></i> Book Photo Shoot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="djModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-music me-2"></i>DJ & Sound Setup (Samples)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="row g-3">
+            <div class="col-md-4 col-12"><img src="dj1.jpg" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="DJ 1"></div>
+            <div class="col-md-4 col-12"><img src="dj2.jpg" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="DJ 2"></div>
+            <div class="col-md-4 col-12"><img src="dj3.jpg" onerror="this.src='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="DJ 3"></div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">High-bass JBL line arrays & lasers</small>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20book%20DJ%20Sound%20setup" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp me-1"></i> Book DJ Setup</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Fun Stalls & Food Section -->
   <section id="funstalls" class="bg-white py-5 border-top border-bottom">
@@ -151,64 +246,115 @@
       <div class="text-center mb-5">
         <h6 class="text-warning fw-bold text-uppercase">Kids & Guest Favorites</h6>
         <h2 class="fw-bold">Live Party Stalls & Treats</h2>
-        <p class="text-muted">Live counters that make birthdays and family events extra special</p>
+        <p class="text-muted">Live counters that make birthdays and family events extra special (Click to view sample photos)</p>
       </div>
 
       <div class="row g-4 text-center">
-        <div class="col-6 col-md-3">
-          <div class="p-3 border rounded service-card bg-light">
-            <i class="fa-solid fa-seedling text-warning fs-1 mb-2"></i>
-            <h6 class="fw-bold mb-0">Live Popcorn Counter</h6>
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#popcornModal">
+            <div class="mb-3"><i class="fa-solid fa-bucket text-danger" style="font-size: 2.8rem;"></i></div>
+            <h6 class="fw-bold mb-1">Live Popcorn Counter</h6>
+            <small class="text-muted d-block mb-2">Fresh hot butter & caramel popcorn</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 border rounded service-card bg-light">
-            <i class="fa-solid fa-cloud text-info fs-1 mb-2"></i>
-            <h6 class="fw-bold mb-0">Cotton Candy Machine</h6>
+
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#cottonModal">
+            <div class="mb-3"><i class="fa-solid fa-candy-cane" style="font-size: 2.8rem; color: #ff69b4;"></i></div>
+            <h6 class="fw-bold mb-1">Cotton Candy Machine</h6>
+            <small class="text-muted d-block mb-2">Fluffy pink sweet candy clouds</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 border rounded service-card bg-light">
-            <i class="fa-solid fa-cake-candles text-danger fs-1 mb-2"></i>
-            <h6 class="fw-bold mb-0">Chocolate Fountain</h6>
+
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#chocModal">
+            <div class="mb-3"><i class="fa-solid fa-mug-hot" style="font-size: 2.8rem; color: #5c3826;"></i></div>
+            <h6 class="fw-bold mb-1">Chocolate Fountain</h6>
+            <small class="text-muted d-block mb-2">Warm molten chocolate dip & treats</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="p-3 border rounded service-card bg-light">
-            <i class="fa-solid fa-wine-glass text-success fs-1 mb-2"></i>
-            <h6 class="fw-bold mb-0">Fresh Juice & Mocktails</h6>
+
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#juiceModal">
+            <div class="mb-3"><i class="fa-solid fa-martini-glass-citrus text-warning" style="font-size: 2.8rem;"></i></div>
+            <h6 class="fw-bold mb-1">Fresh Juice & Mocktails</h6>
+            <small class="text-muted d-block mb-2">Chilled fruit drinks & mojitos</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#fruitModal">
+            <div class="mb-3"><i class="fa-solid fa-bowl-food text-success" style="font-size: 2.8rem;"></i></div>
+            <h6 class="fw-bold mb-1">Fresh Fruit Salad Counter</h6>
+            <small class="text-muted d-block mb-2">Healthy cut seasonal fruit mix</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <div class="p-4 border rounded service-card bg-light h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#boothModal">
+            <div class="mb-3"><i class="fa-solid fa-camera-retro text-primary" style="font-size: 2.8rem;"></i></div>
+            <h6 class="fw-bold mb-1">Instant Photo Booth</h6>
+            <small class="text-muted d-block mb-2">Instant live photo prints with fun props</small>
+            <span class="badge bg-warning text-dark px-2 py-1">View Photos</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Enquiry Section -->
-  <section id="contact" class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <h2 class="fw-bold mb-3">Book Your Event Date Today!</h2>
-        <p class="text-muted mb-4">Contact us directly on WhatsApp or Call for customized packages and budget quotes.</p>
-        
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="tel:+919566047449" class="btn btn-dark btn-lg px-4"><i class="fa-solid fa-phone me-2"></i> Call: +91 95660 47449</a>
-          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20know%20package%20prices%20for%20an%20event" class="btn btn-success btn-lg px-4"><i class="fa-brands fa-whatsapp me-2"></i> Chat on WhatsApp</a>
+  <!-- Modals for 6 Food Stalls -->
+  <div class="modal fade" id="popcornModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-bucket me-2"></i>Popcorn Counter Samples</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="row g-3">
+            <div class="col-md-4 col-12"><img src="popcorn1.jpg" onerror="this.src='https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Popcorn 1"></div>
+            <div class="col-md-4 col-12"><img src="popcorn2.jpg" onerror="this.src='https://images.unsplash.com/photo-1585647347483-22b66260dfff?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Popcorn 2"></div>
+            <div class="col-md-4 col-12"><img src="popcorn3.jpg" onerror="this.src='https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Popcorn 3"></div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">Live popcorn machine setup</small>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20book%20Popcorn%20Counter" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp me-1"></i> Book Stall</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <small>© 2026 SSM Eventz. All rights reserved.</small>
-  </footer>
+  <div class="modal fade" id="cottonModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-candy-cane me-2"></i>Cotton Candy Machine Samples</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="row g-3">
+            <div class="col-md-4 col-12"><img src="cotton1.jpg" onerror="this.src='https://images.unsplash.com/photo-1575224300306-1b8da36134ec?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Cotton Candy 1"></div>
+            <div class="col-md-4 col-12"><img src="cotton2.jpg" onerror="this.src='https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Cotton Candy 2"></div>
+            <div class="col-md-4 col-12"><img src="cotton3.jpg" onerror="this.src='https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=600&q=80'" class="gallery-img shadow-sm" alt="Cotton Candy 3"></div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <small class="text-muted">Fluffy sweet cotton candies</small>
+          <a href="https://wa.me/919566047449?text=Hi,%20I%20want%20to%20book%20Cotton%20Candy%20Stall" class="btn btn-success btn-sm"><i class="fa-brands fa-whatsapp me-1"></i> Book Stall</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919566047449?text=Hello,%20I%20have%20an%20event%20booking%20enquiry!" class="whatsapp-float">
-    <i class="fa-brands fa-whatsapp me-1"></i> Quick Enquiry
-  </a>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <div class="modal fade" id="chocModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold text-warning"><i class="fa-solid fa-mug-hot me-2"></i>Chocolate Fountain Samples</h5>
+          <button
